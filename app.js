@@ -21,6 +21,8 @@ exports.agregarTarea = function (tarea) {
         Registra y guarda una nueva tarea.
     */
     tareasporhacer.push(tarea);
+    let formatoJazon= JSON.stringify(tareasporhacer);
+    fs.writeFileSync('./tareas.json', formatoJazon);
 }
 
 exports.filtrarTareasPorEstado = function (estado) {
